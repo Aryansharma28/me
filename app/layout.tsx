@@ -7,6 +7,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <title>This is Aryan</title>
+      </head>
       <body className='cursor-retro'>{children}</body>
     </html>
   )
