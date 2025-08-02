@@ -20,18 +20,18 @@ const ImageTile = ({ cards }: { cards: Card[] }) => {
   }, [cards.length]);
 
   return (
-    <div className="fixed left-2/7 top-1/2 -translate-y-1/2 -translate-x-1/2 z-50 pointer-events-none">
-      <div className="bg-white/10 backdrop-blur-lg rounded-2xl border border-white/20 shadow-xl p-4 w-[400px] h-[650px] pointer-events-auto overflow-hidden">
+    <div className="relative">
+      <div className="bg-white/10 backdrop-blur-lg rounded-2xl border border-white/20 shadow-xl p-4 w-[300px] h-[450px] md:w-[400px] md:h-[650px]">
         <AnimatePresence mode="wait">
           <motion.img
             key={cards[index].image}
             src={cards[index].image}
             alt={`Photo ${index + 1}`}
-            initial={{ opacity: 0, scale: 0.98 }}
+            initial={{ opacity: 0, scale: 0.90 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 1.02 }}
             transition={{ duration: 0.5, ease: 'easeInOut' }}
-            className="w-full h-full object-cover object-top rounded-xl cursor-pointer"
+            className="w-full h-full object-cover object-center rounded-xl cursor-pointer"
             onClick={() => setSelectedCard(cards[index])}
           />
         </AnimatePresence>
