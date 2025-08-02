@@ -11,7 +11,7 @@ export default function Navbar() {
         <li><a href="https://www.linkedin.com/in/aryansharma12282002/"><FaLinkedin size={24} /></a></li>
         <li><a href="https://github.com/Aryansharma28"><FaGithub size={24} /></a></li>
         <li><a href="https://www.instagram.com/lifeofaryansharma/"><FaInstagram size={24} /></a></li>
-        <li><a href="/contact" className="btn">Contact</a></li>
+        <li><a href="https://calendly.com/aryansharma2k2/aryan-x-15-mins" className="btn">Contact</a></li>
       </ul>
       </div>
     </nav>
