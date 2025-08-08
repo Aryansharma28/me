@@ -1,4 +1,5 @@
 import './globals.css'
+import {Analytics} from "@vercel/analytics/next";
 
 export default function RootLayout({
   children,
@@ -10,7 +11,9 @@ export default function RootLayout({
       <head>
         <title>This is Aryan</title>
       </head>
-      <body className='cursor-retro'>{children}</body>
+      <body className='cursor-retro'>{children}
+        <Analytics />
+      </body>
     </html>
   )
 }
