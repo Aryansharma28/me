@@ -40,7 +40,7 @@ export default function Footer() {
           <a href="https://www.instagram.com/lifeofaryansharma/" className="hover:text-blue-400 transition-colors flex items-center gap-3" target="_blank">
             <FaInstagram className="text-lg" /> Instagram
           </a>
-          <a href="/Aryan_Sharma_Resume.pdf" className="hover:text-blue-400 transition-colors flex items-center gap-3" target="_blank">
+          <a href="/AryanSharmaCv.pdf" className="hover:text-blue-400 transition-colors flex items-center gap-3" target="_blank">
             <FaFileAlt className="text-lg" /> View Resume
           </a>
         </div>
