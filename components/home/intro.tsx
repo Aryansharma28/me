@@ -52,7 +52,7 @@ export default function HeroSection() {
               <i>Builder. Founder-ish.</i>
             </h2>
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 leading-relaxed">
-              I don't just write code — I ship things people use.
+              I don't just write code. I ship things people use.
             </p>
           </motion.div>
         </div>
