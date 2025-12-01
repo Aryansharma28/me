@@ -7,23 +7,23 @@ export default function HeroSection() {
   const cards = [
   {
     image: "/images/IMG_20240120_120618.jpg",
-    caption: "This is me",
+    caption: "Just me.",
   },
   {
     image: "/images/IMG_20240724_123359.jpg",
-    caption: "Exploring the world",
+    caption: "Somewhere in Europe.",
   },
   {
     image: "/images/IMG-20220731-WA0054.jpg",
-    caption: "Just Being Me",
+    caption: "Being myself.",
   },
   {
     image: "/images/IMG-20240624-WA0034.jpg",
-    caption: "Tech excites me too much",
+    caption: "Tech gets me going.",
   },
   {
     image: "/images/RJ_03081-opq3558734422.jpg",
-    caption: "Random shot of me at tech4good",
+    caption: "At Tech4Good conference.",
   },
 ];
 
@@ -49,10 +49,10 @@ export default function HeroSection() {
               Hey, I'm Aryan.
             </h1>
             <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold leading-tight text-gray-800 mb-3">
-              <i>Founder-ish. Builder Always.</i>
+              <i>Builder. Founder-ish.</i>
             </h2>
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 leading-relaxed">
-              Most devs write code. I bring products to life.
+              I don't just write code — I ship things people use.
             </p>
           </motion.div>
         </div>

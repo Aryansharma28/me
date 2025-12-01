@@ -3,6 +3,14 @@
 
 @import "tailwindcss";
 
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
 
 @layer utilities {
   .cursor-retro {

@@ -1,5 +1,6 @@
 import './globals.css'
 import {Analytics} from "@vercel/analytics/next";
+import LoadingRipple from "../components/loading-ripple";
 
 export default function RootLayout({
   children,
@@ -11,7 +12,9 @@ export default function RootLayout({
       <head>
         <title>This is Aryan</title>
       </head>
-      <body className='cursor-retro'>{children}
+      <body className='cursor-retro'>
+        <LoadingRipple />
+        {children}
         <Analytics />
       </body>
     </html>

@@ -15,7 +15,13 @@ const FlipCard = ({ title, content }: { title: string; content: string }) => {
         className="relative w-full h-full"
         initial={false}
         animate={{ rotateY: isFlipped ? 180 : 0 }}
-        transition={{ duration: 0.6, ease: "easeInOut" }}
+        transition={{
+          duration: 0.7,
+          ease: [0.43, 0.13, 0.23, 0.96],
+          type: "spring",
+          stiffness: 80,
+          damping: 15
+        }}
         style={{ transformStyle: "preserve-3d" }}
       >
         {/* Front */}
@@ -46,22 +52,22 @@ export default function aboutFunction(){
   {
     title: " Who I Am",
     content:
-      "I’m Aryan — CS grad (cum laude) from VU Amsterdam, originally from India. I left MIT Manipal to chase something messier: growth that doesn’t come with a syllabus. These past few years in 🇳🇱 taught me how to unlearn, adapt, crash, rebuild — and trust the itch that says ‘there’s more.’"
+      "CS grad from VU Amsterdam. Originally from India, left MIT Manipal to bet on myself. These years in Amsterdam taught me to crash hard, rebuild faster, and trust my gut when it says there's more."
   },
   {
     title: " What I Do",
     content:
-      "I’ve built backend systems at Orq.ai, led an AI project that won best project at NAHSS, and pitched globally through Huawei’s Seeds for the Future. Also hosted workshops, co-founded a student org, and learned to lead beyond just code. TL;DR: I ship, I pitch, I break stuff (then fix it better)."
+      "Built backend at Orq.ai. Won best project at NAHSS. Pitched at Huawei Seeds for the Future. Co-founded a student org, ran workshops, shipped code. I build, I break, I ship."
   },
   {
     title: " What I Believe",
     content:
-      "Success isn’t a checklist it’s a compass. I believe in chasing energy, taking uncomfortable paths, and learning by building. We’ve only got ~4,000 weeks on this planet. I want mine to spark something real for me, and for the people I build with."
+      "Success isn't checking boxes — it's following energy. I take uncomfortable paths and learn by doing. We've got ~4,000 weeks. Mine will count."
   },
   {
-    title: " Right Now?",
+    title: " Right Now",
     content:
-      "Just wrapped up my degree and I’m on a Dutch search year visa. Looking for a full-time role in software, AI, or growth — or to join a scrappy, early-stage startup where I can build with purpose. Open to collabs, co-founders, or anyone figuring sh*t out in public."
+      "On a Dutch search year visa. Looking for full-time roles or early-stage startups where I can build something real. Open to collabs, co-founders, or anyone building in public."
   }
 ];
 

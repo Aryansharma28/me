@@ -15,7 +15,7 @@ const ImageTile = ({ cards }: { cards: Card[] }) => {
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % cards.length);
-    }, 3000);
+    }, 4000);
     return () => clearInterval(interval);
   }, [cards.length]);
 
@@ -27,10 +27,13 @@ const ImageTile = ({ cards }: { cards: Card[] }) => {
             key={cards[index].image}
             src={cards[index].image}
             alt={`Photo ${index + 1}`}
-            initial={{ opacity: 0, scale: 0.90 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 1.02 }}
-            transition={{ duration: 0.5, ease: 'easeInOut' }}
+            initial={{ opacity: 0, scale: 0.95, filter: 'blur(4px)' }}
+            animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
+            exit={{ opacity: 0, scale: 1.05, filter: 'blur(4px)' }}
+            transition={{
+              duration: 0.8,
+              ease: [0.43, 0.13, 0.23, 0.96]
+            }}
             className="w-full h-full object-cover object-center rounded-xl cursor-pointer"
             onClick={() => setSelectedCard(cards[index])}
           />
@@ -45,14 +48,15 @@ const ImageTile = ({ cards }: { cards: Card[] }) => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
+            transition={{ duration: 0.3, ease: [0.43, 0.13, 0.23, 0.96] }}
             onClick={() => setSelectedCard(null)}
           >
             <motion.div
               className="bg-white rounded-lg p-6 max-w-sm text-center shadow-lg"
-              initial={{ scale: 0.95 }}
-              animate={{ scale: 1 }}
-              exit={{ scale: 0.95 }}
-              transition={{ duration: 0.3, ease: 'easeInOut' }}
+              initial={{ scale: 0.9, y: 20 }}
+              animate={{ scale: 1, y: 0 }}
+              exit={{ scale: 0.9, y: 20 }}
+              transition={{ duration: 0.35, ease: [0.43, 0.13, 0.23, 0.96] }}
               onClick={(e) => e.stopPropagation()}
             >
               <img
