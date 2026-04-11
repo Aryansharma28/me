@@ -87,14 +87,14 @@ function Logo({
         width={20}
         height={20}
         loading="lazy"
-        className="h-5 w-5 flex-shrink-0 rounded-[4px] object-contain"
+        className="h-5 w-5 flex-shrink-0 rounded-[4px] object-contain transition-transform duration-300 ease-out group-hover:scale-110"
       />
     );
   }
   return (
     <div
       aria-hidden
-      className="flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-[4px] border border-[--color-subtle] bg-[--color-surface] text-[10px] font-medium text-muted"
+      className="flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-[4px] border border-[--color-subtle] bg-[--color-surface] text-[10px] font-medium text-muted transition-all duration-300 ease-out group-hover:scale-110 group-hover:border-foreground group-hover:text-foreground"
     >
       {company.replace(/[^a-zA-Z]/g, "").charAt(0).toUpperCase() || "·"}
     </div>
@@ -124,8 +124,8 @@ export default function Work() {
               viewport={{ once: true, margin: "-5%" }}
               transition={{ duration: 0.4, ease, delay: Math.min(i * 0.03, 0.2) }}
             >
-              <div className="grid grid-cols-1 items-center gap-1 px-1 py-5 transition-colors hover:bg-[--color-surface] md:grid-cols-[1fr_auto] md:gap-6">
-                <div className="flex items-center gap-3 md:gap-4">
+              <div className="group grid grid-cols-1 items-center gap-1 px-3 py-5 transition-all duration-300 ease-out hover:bg-[--color-surface] md:grid-cols-[1fr_auto] md:gap-6">
+                <div className="flex items-center gap-3 transition-transform duration-300 ease-out group-hover:translate-x-1 md:gap-4">
                   <Logo
                     company={role.company}
                     domain={role.domain}
@@ -135,12 +135,12 @@ export default function Work() {
                     <span className="text-base font-medium text-foreground md:text-lg">
                       {role.company}
                     </span>
-                    <span className="text-sm text-muted md:text-base">
+                    <span className="text-sm text-muted transition-colors duration-300 group-hover:text-foreground md:text-base">
                       {role.title}
                     </span>
                   </div>
                 </div>
-                <span className="ml-8 text-sm text-muted tabular-nums md:ml-0">
+                <span className="ml-8 text-sm text-muted tabular-nums transition-colors duration-300 group-hover:text-foreground md:ml-0">
                   {role.period}
                 </span>
               </div>

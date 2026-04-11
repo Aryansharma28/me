@@ -42,7 +42,7 @@ export default function Footer() {
             href="https://cal.com/aryan-sharma-mwdtuc/20-mins"
             target="_blank"
             rel="noreferrer"
-            className="group inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-base font-medium text-background transition-colors hover:bg-[--color-muted]"
+            className="group inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-base font-medium text-background shadow-sm transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-[--color-muted] hover:shadow-lg"
           >
             Book a 20-min call
             <span
@@ -65,7 +65,7 @@ export default function Footer() {
             <a
               href="mailto:aryansharma2k2@gmail.com"
               aria-label="Email"
-              className="inline-flex hover:text-foreground transition-colors"
+              className="inline-flex transition-all duration-200 ease-out hover:-translate-y-0.5 hover:scale-110 hover:text-foreground"
             >
               <MailIcon />
             </a>
@@ -76,7 +76,7 @@ export default function Footer() {
               target="_blank"
               rel="noreferrer"
               aria-label="GitHub"
-              className="inline-flex hover:text-foreground transition-colors"
+              className="inline-flex transition-all duration-200 ease-out hover:-translate-y-0.5 hover:scale-110 hover:text-foreground"
             >
               <GitHubIcon />
             </a>
@@ -87,7 +87,7 @@ export default function Footer() {
               target="_blank"
               rel="noreferrer"
               aria-label="LinkedIn"
-              className="inline-flex hover:text-foreground transition-colors"
+              className="inline-flex transition-all duration-200 ease-out hover:-translate-y-0.5 hover:scale-110 hover:text-foreground"
             >
               <LinkedInIcon />
             </a>

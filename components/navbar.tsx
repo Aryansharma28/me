@@ -36,7 +36,7 @@ export default function Navbar() {
             href="https://cal.com/aryan-sharma-mwdtuc/20-mins"
             target="_blank"
             rel="noreferrer"
-            className="group inline-flex items-center gap-1.5 rounded-full bg-foreground px-3.5 py-1.5 text-xs font-medium text-background transition-colors hover:bg-[--color-muted]"
+            className="group inline-flex items-center gap-1.5 rounded-full bg-foreground px-3.5 py-1.5 text-xs font-medium text-background shadow-sm transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-[--color-muted] hover:shadow-md"
           >
             Book a call
             <span

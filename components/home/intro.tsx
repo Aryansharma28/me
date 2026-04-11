@@ -41,8 +41,25 @@ export default function HeroSection() {
           transition={{ duration: 0.6, ease, delay: 0.08 }}
           className="max-w-3xl text-2xl font-medium leading-[1.15] tracking-tight text-foreground md:text-4xl lg:text-5xl"
         >
-          <span className="font-serif italic">Building</span> at LangWatch.{" "}
-          <span className="font-serif italic">Incoming</span> at Booking.com.
+          <span className="font-serif italic">Building</span> at{" "}
+          <a
+            href="https://langwatch.ai"
+            target="_blank"
+            rel="noreferrer"
+            className="link-underline hover:text-muted transition-colors"
+          >
+            LangWatch
+          </a>
+          . <span className="font-serif italic">Incoming</span> at{" "}
+          <a
+            href="https://booking.com"
+            target="_blank"
+            rel="noreferrer"
+            className="link-underline hover:text-muted transition-colors"
+          >
+            Booking.com
+          </a>
+          .
         </motion.p>
 
         <motion.p
@@ -50,7 +67,25 @@ export default function HeroSection() {
           transition={{ duration: 0.5, ease, delay: 0.2 }}
           className="mt-4 text-sm text-muted md:text-base"
         >
-          Previously orq.ai and VU Amsterdam.
+          Previously{" "}
+          <a
+            href="https://orq.ai"
+            target="_blank"
+            rel="noreferrer"
+            className="link-underline hover:text-foreground transition-colors"
+          >
+            orq.ai
+          </a>{" "}
+          and{" "}
+          <a
+            href="https://vu.nl"
+            target="_blank"
+            rel="noreferrer"
+            className="link-underline hover:text-foreground transition-colors"
+          >
+            VU Amsterdam
+          </a>
+          .
         </motion.p>
 
         <motion.div
@@ -62,7 +97,7 @@ export default function HeroSection() {
             href="https://cal.com/aryan-sharma-mwdtuc/20-mins"
             target="_blank"
             rel="noreferrer"
-            className="group inline-flex items-center gap-2 rounded-full bg-foreground px-5 py-2.5 text-sm font-medium text-background transition-colors hover:bg-[--color-muted]"
+            className="group inline-flex items-center gap-2 rounded-full bg-foreground px-5 py-2.5 text-sm font-medium text-background shadow-sm transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-[--color-muted] hover:shadow-lg"
           >
             Book a 20-min call
             <span
@@ -83,7 +118,7 @@ export default function HeroSection() {
             <a
               href="mailto:aryansharma2k2@gmail.com"
               aria-label="Email"
-              className="inline-flex hover:text-foreground transition-colors"
+              className="inline-flex transition-all duration-200 ease-out hover:-translate-y-0.5 hover:scale-110 hover:text-foreground"
             >
               <MailIcon />
             </a>
@@ -94,7 +129,7 @@ export default function HeroSection() {
               target="_blank"
               rel="noreferrer"
               aria-label="GitHub"
-              className="inline-flex hover:text-foreground transition-colors"
+              className="inline-flex transition-all duration-200 ease-out hover:-translate-y-0.5 hover:scale-110 hover:text-foreground"
             >
               <GitHubIcon />
             </a>
@@ -105,7 +140,7 @@ export default function HeroSection() {
               target="_blank"
               rel="noreferrer"
               aria-label="LinkedIn"
-              className="inline-flex hover:text-foreground transition-colors"
+              className="inline-flex transition-all duration-200 ease-out hover:-translate-y-0.5 hover:scale-110 hover:text-foreground"
             >
               <LinkedInIcon />
             </a>

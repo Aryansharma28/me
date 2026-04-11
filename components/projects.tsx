@@ -65,24 +65,24 @@ export default function Projects() {
                 href={project.href}
                 target="_blank"
                 rel="noreferrer"
-                className="group block px-1 py-6 transition-colors hover:bg-[--color-surface]"
+                className="group block px-3 py-6 transition-all duration-300 ease-out hover:bg-[--color-surface]"
               >
                 <div className="grid grid-cols-1 gap-1 md:grid-cols-[1fr_auto] md:items-baseline md:gap-6">
-                  <div>
+                  <div className="transition-transform duration-300 ease-out group-hover:translate-x-1">
                     <h3 className="text-base font-medium text-foreground md:text-lg">
-                      <span className="link-underline">{project.name}</span>{" "}
+                      <span className="link-underline">{project.name}</span>
                       <span
                         aria-hidden
-                        className="inline-block translate-x-0 text-muted opacity-0 transition-all duration-200 group-hover:translate-x-1 group-hover:opacity-100"
+                        className="ml-1 inline-block -translate-x-1 text-muted opacity-0 transition-all duration-300 ease-out group-hover:translate-x-0 group-hover:text-foreground group-hover:opacity-100"
                       >
                         ↗
                       </span>
                     </h3>
-                    <p className="mt-1 max-w-2xl text-sm leading-relaxed text-muted md:text-base">
+                    <p className="mt-1 max-w-2xl text-sm leading-relaxed text-muted transition-colors duration-300 group-hover:text-foreground md:text-base">
                       {project.description}
                     </p>
                   </div>
-                  <span className="text-sm text-muted tabular-nums">
+                  <span className="text-sm text-muted tabular-nums transition-colors duration-300 group-hover:text-foreground">
                     {project.meta}
                   </span>
                 </div>
