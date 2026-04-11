@@ -29,7 +29,7 @@ export default function HeroSection() {
             width={96}
             height={96}
             priority
-            className="h-16 w-16 rounded-full object-cover md:h-20 md:w-20"
+            className="h-16 w-16 rounded-full object-cover shadow-[0_6px_24px_rgba(0,0,0,0.18)] transition-shadow duration-300 dark:shadow-[0_6px_28px_rgba(255,255,255,0.12)] md:h-20 md:w-20"
           />
           <span className="font-display text-3xl leading-none tracking-[0.01em] text-foreground md:text-4xl">
             Aryan Sharma

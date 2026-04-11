@@ -8,6 +8,7 @@ type Role = {
   period: string;
   domain?: string;
   logo?: string;
+  bgPad?: boolean;
 };
 
 const roles: Role[] = [
@@ -22,6 +23,7 @@ const roles: Role[] = [
     title: "Engineering",
     period: "Nov 2025 - Present",
     domain: "langwatch.ai",
+    bgPad: true,
   },
   {
     company: "EuroTech Federation",
@@ -67,10 +69,12 @@ function Logo({
   company,
   domain,
   logo,
+  bgPad,
 }: {
   company: string;
   domain?: string;
   logo?: string;
+  bgPad?: boolean;
 }) {
   const src =
     logo ??
@@ -79,6 +83,21 @@ function Logo({
       : null);
 
   if (src) {
+    if (bgPad) {
+      return (
+        <div className="flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-[4px] bg-white p-[2px] transition-transform duration-300 ease-out group-hover:scale-110">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={src}
+            alt=""
+            width={16}
+            height={16}
+            loading="lazy"
+            className="h-full w-full object-contain"
+          />
+        </div>
+      );
+    }
     return (
       // eslint-disable-next-line @next/next/no-img-element
       <img
@@ -130,6 +149,7 @@ export default function Work() {
                     company={role.company}
                     domain={role.domain}
                     logo={role.logo}
+                    bgPad={role.bgPad}
                   />
                   <div className="flex flex-col gap-0.5 md:flex-row md:items-baseline md:gap-4">
                     <span className="text-base font-medium text-foreground md:text-lg">

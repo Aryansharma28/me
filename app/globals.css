@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --color-background: #ffffff;
   --color-foreground: #0a0a0a;
@@ -13,6 +15,14 @@
   --font-display: var(--font-dm-serif-display), "Georgia", serif;
 }
 
+:root.dark {
+  --color-background: #0a0a0a;
+  --color-foreground: #fafafa;
+  --color-muted: #9ca3af;
+  --color-subtle: #1f1f1f;
+  --color-surface: #141414;
+}
+
 html {
   scroll-behavior: smooth;
   background-color: var(--color-background);
@@ -22,14 +32,32 @@ html {
   text-rendering: optimizeLegibility;
 }
 
+html,
+body {
+  transition: background-color 200ms ease, color 200ms ease;
+}
+
+/* Circular wipe theme toggle (View Transition API) */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+::view-transition-old(root) {
+  z-index: 1;
+}
+::view-transition-new(root) {
+  z-index: 9999;
+}
+
 body {
   font-family: var(--font-sans);
   font-feature-settings: "cv11", "ss01", "ss03";
 }
 
 ::selection {
-  background-color: #0a0a0a;
-  color: #ffffff;
+  background-color: var(--color-foreground);
+  color: var(--color-background);
 }
 
 /* Subtle underline-grow for links */
