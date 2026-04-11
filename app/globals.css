@@ -34,7 +34,7 @@ html {
 
 html,
 body {
-  transition: background-color 200ms ease, color 200ms ease;
+  transition: background-color 150ms linear, color 150ms linear;
 }
 
 /* Circular wipe theme toggle (View Transition API) */
