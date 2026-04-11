@@ -1,54 +1,104 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
-import { FaGithub, FaLinkedin, FaInstagram, FaEnvelope, FaCalendarAlt, FaFileAlt } from "react-icons/fa";
+import { GitHubIcon, LinkedInIcon, MailIcon } from "./icons";
+
+const ease = [0.22, 1, 0.36, 1] as const;
 
 export default function Footer() {
-  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.2 });
-
   return (
-    <motion.footer
-      ref={ref}
-      initial={{ opacity: 0, y: 50 }}
-      animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.8, ease: "easeOut" }}
-      className="bg-black text-white px-6 py-12 md:px-16"
-    >
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between gap-12">
-        <div>
-          <h2 className="text-3xl font-bold mb-2">Let’s Build Something.</h2>
-          <p className="text-gray-400 max-w-md">
-            Whether you're starting a wild idea, hiring someone who gives a damn,
-            or just vibing with my journey — I’m open to talk.
-          </p>
-        </div>
+    <footer id="contact" className="border-t border-[--color-subtle]">
+      <div className="mx-auto w-full max-w-4xl px-6 md:px-8 py-24 md:py-32">
+        <motion.p
+          initial={{ opacity: 0, y: 8 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-10%" }}
+          transition={{ duration: 0.5, ease }}
+          className="mb-10 text-xs uppercase tracking-[0.22em] text-muted"
+        >
+          Get in touch
+        </motion.p>
 
-        <div className="flex flex-col gap-4 text-base">
-          <a href="mailto:aryansharma2k2@gmail.com" className="hover:text-blue-400 transition-colors flex items-center gap-3" target="_blank">
-            <FaEnvelope className="text-lg" /> Email Me
+        <motion.p
+          initial={{ opacity: 0, y: 8 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-10%" }}
+          transition={{ duration: 0.6, ease, delay: 0.05 }}
+          className="max-w-2xl text-lg leading-relaxed text-foreground md:text-xl"
+        >
+          Got a question, a wild idea, or just wanna talk about{" "}
+          <span className="font-serif italic">anything under the sun</span>?
+          Just book a call.
+        </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 8 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-10%" }}
+          transition={{ duration: 0.6, ease, delay: 0.15 }}
+          className="mt-10"
+        >
+          <a
+            href="https://cal.com/aryan-sharma-mwdtuc/20-mins"
+            target="_blank"
+            rel="noreferrer"
+            className="group inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-base font-medium text-background shadow-sm transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-[--color-muted] hover:shadow-lg"
+          >
+            Book a 20-min call
+            <span
+              aria-hidden
+              className="inline-block transition-transform duration-200 group-hover:translate-x-0.5"
+            >
+              →
+            </span>
           </a>
-          <a href="https://calendly.com/aryansharma2k2/aryan-x-15-mins" className="hover:text-blue-400 transition-colors flex items-center gap-3" target="_blank">
-            <FaCalendarAlt className="text-lg" /> Book a Call
-          </a>
-          <a href="https://www.linkedin.com/in/aryansharma12282002/" className="hover:text-blue-400 transition-colors flex items-center gap-3" target="_blank">
-            <FaLinkedin className="text-lg" /> LinkedIn
-          </a>
-          <a href="https://github.com/aryansharma28" className="hover:text-blue-400 transition-colors flex items-center gap-3" target="_blank">
-            <FaGithub className="text-lg" /> GitHub
-          </a>
-          <a href="https://www.instagram.com/lifeofaryansharma/" className="hover:text-blue-400 transition-colors flex items-center gap-3" target="_blank">
-            <FaInstagram className="text-lg" /> Instagram
-          </a>
-          <a href="/AryanSharmaCv.pdf" className="hover:text-blue-400 transition-colors flex items-center gap-3" target="_blank">
-            <FaFileAlt className="text-lg" /> View Resume
-          </a>
+        </motion.div>
+
+        <motion.ul
+          initial={{ opacity: 0, y: 8 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-10%" }}
+          transition={{ duration: 0.6, ease, delay: 0.2 }}
+          className="mt-8 flex items-center gap-5 text-muted"
+        >
+          <li>
+            <a
+              href="mailto:aryansharma2k2@gmail.com"
+              aria-label="Email"
+              className="inline-flex transition-all duration-200 ease-out hover:-translate-y-0.5 hover:scale-110 hover:text-foreground"
+            >
+              <MailIcon />
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://github.com/aryansharma28"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="GitHub"
+              className="inline-flex transition-all duration-200 ease-out hover:-translate-y-0.5 hover:scale-110 hover:text-foreground"
+            >
+              <GitHubIcon />
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.linkedin.com/in/aryansharma12282002/"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="LinkedIn"
+              className="inline-flex transition-all duration-200 ease-out hover:-translate-y-0.5 hover:scale-110 hover:text-foreground"
+            >
+              <LinkedInIcon />
+            </a>
+          </li>
+        </motion.ul>
+
+        <div className="mt-20 flex items-center justify-between border-t border-[--color-subtle] pt-6 text-xs text-muted">
+          <span>&copy; {new Date().getFullYear()} Aryan Sharma</span>
+          <span>Amsterdam</span>
         </div>
       </div>
-
-      <div className="mt-12 text-center text-sm text-gray-500">
-        © {new Date().getFullYear()} Aryan Sharma. Built with Next.js, Tailwind & a little chaos.
-      </div>
-    </motion.footer>
+    </footer>
   );
 }
