@@ -1,6 +1,6 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Instrument_Serif } from "next/font/google";
+import { Geist, Geist_Mono, Instrument_Serif, Syne } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 
 const geist = Geist({
@@ -23,13 +23,20 @@ const instrumentSerif = Instrument_Serif({
   display: "swap",
 });
 
+const syne = Syne({
+  subsets: ["latin"],
+  weight: ["500", "600", "700"],
+  variable: "--font-syne",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://me-seven-eosin.vercel.app"),
-  title: "Aryan Sharma — Builder",
+  title: "Aryan Sharma · Builder",
   description:
     "Builder in Amsterdam. Building at LangWatch, incoming at Booking.com. Backend systems, applied AI, and small products with real users.",
   openGraph: {
-    title: "Aryan Sharma — Builder",
+    title: "Aryan Sharma · Builder",
     description:
       "Builder in Amsterdam. Building at LangWatch, incoming at Booking.com.",
     url: "https://me-seven-eosin.vercel.app",
@@ -39,7 +46,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Aryan Sharma — Builder",
+    title: "Aryan Sharma · Builder",
     description:
       "Builder in Amsterdam. Building at LangWatch, incoming at Booking.com.",
   },
@@ -54,7 +61,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geist.variable} ${geistMono.variable} ${instrumentSerif.variable}`}
+      className={`${geist.variable} ${geistMono.variable} ${instrumentSerif.variable} ${syne.variable}`}
     >
       <body className="bg-background text-foreground antialiased">
         {children}

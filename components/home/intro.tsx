@@ -21,7 +21,7 @@ export default function HeroSection() {
         <motion.div
           {...fadeUp}
           transition={{ duration: 0.6, ease }}
-          className="mb-8"
+          className="mb-10 flex items-center gap-4"
         >
           <Image
             src="/aryan.jpg"
@@ -29,27 +29,28 @@ export default function HeroSection() {
             width={96}
             height={96}
             priority
-            className="h-20 w-20 rounded-full object-cover md:h-24 md:w-24"
+            className="h-16 w-16 rounded-full object-cover md:h-20 md:w-20"
           />
+          <span className="font-display text-2xl leading-none tracking-tight text-foreground md:text-3xl">
+            Aryan Sharma
+          </span>
         </motion.div>
 
         <motion.p
           {...fadeUp}
-          transition={{ duration: 0.5, ease, delay: 0.05 }}
-          className="mb-6 text-xs uppercase tracking-[0.22em] text-muted"
+          transition={{ duration: 0.6, ease, delay: 0.08 }}
+          className="max-w-3xl text-2xl font-medium leading-[1.15] tracking-tight text-foreground md:text-4xl lg:text-5xl"
         >
-          Aryan Sharma &middot; Builder
+          <span className="font-serif italic">Building</span> at LangWatch.{" "}
+          <span className="font-serif italic">Incoming</span> at Booking.com.
         </motion.p>
 
         <motion.p
           {...fadeUp}
-          transition={{ duration: 0.6, ease, delay: 0.12 }}
-          className="max-w-3xl text-3xl font-medium leading-[1.1] tracking-tight text-foreground md:text-5xl lg:text-6xl"
+          transition={{ duration: 0.5, ease, delay: 0.2 }}
+          className="mt-4 text-sm text-muted md:text-base"
         >
-          <span className="font-serif italic">Building</span> at LangWatch.{" "}
-          <span className="font-serif italic">Incoming</span> at Booking.com.
-          <br className="hidden md:block" />
-          <span className="text-muted"> Previously orq.ai and VU Amsterdam.</span>
+          Previously orq.ai and VU Amsterdam.
         </motion.p>
 
         <motion.div
@@ -58,12 +59,12 @@ export default function HeroSection() {
           className="mt-10"
         >
           <a
-            href="https://calendly.com/aryansharma2k2/aryan-x-15-mins"
+            href="https://cal.com/aryan-sharma-mwdtuc/20-mins"
             target="_blank"
             rel="noreferrer"
             className="group inline-flex items-center gap-2 rounded-full bg-foreground px-5 py-2.5 text-sm font-medium text-background transition-colors hover:bg-[--color-muted]"
           >
-            Book a 15-min call
+            Book a 20-min call
             <span
               aria-hidden
               className="inline-block transition-transform duration-200 group-hover:translate-x-0.5"

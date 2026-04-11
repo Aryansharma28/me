@@ -31,7 +31,7 @@ export default function About() {
           CS grad from VU Amsterdam, originally from India. I&apos;m always
           optimising for{" "}
           <span className="font-serif italic">learning</span> and becoming the
-          best version of myself — which usually means picking uncomfortable
+          best version of myself, which usually means picking uncomfortable
           paths, <span className="font-serif italic">shipping</span> before
           I&apos;m ready, and building things with real users.
         </motion.p>

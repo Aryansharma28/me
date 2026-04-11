@@ -26,9 +26,9 @@ export default function Footer() {
           transition={{ duration: 0.6, ease, delay: 0.05 }}
           className="max-w-2xl text-lg leading-relaxed text-foreground md:text-xl"
         >
-          Open to conversations about early-stage startups, backend and applied
-          AI roles, or anything worth{" "}
-          <span className="font-serif italic">building</span>.
+          Got a question, a wild idea, or just wanna talk about{" "}
+          <span className="font-serif italic">anything under the sun</span>?
+          Just book a call.
         </motion.p>
 
         <motion.div
@@ -39,12 +39,12 @@ export default function Footer() {
           className="mt-10"
         >
           <a
-            href="https://calendly.com/aryansharma2k2/aryan-x-15-mins"
+            href="https://cal.com/aryan-sharma-mwdtuc/20-mins"
             target="_blank"
             rel="noreferrer"
             className="group inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-base font-medium text-background transition-colors hover:bg-[--color-muted]"
           >
-            Book a 15-min call
+            Book a 20-min call
             <span
               aria-hidden
               className="inline-block transition-transform duration-200 group-hover:translate-x-0.5"
