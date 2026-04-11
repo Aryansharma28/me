@@ -31,7 +31,7 @@ export default function HeroSection() {
             priority
             className="h-16 w-16 rounded-full object-cover md:h-20 md:w-20"
           />
-          <span className="font-display text-2xl leading-none tracking-tight text-foreground md:text-3xl">
+          <span className="font-display text-3xl leading-none tracking-[0.01em] text-foreground md:text-4xl">
             Aryan Sharma
           </span>
         </motion.div>
