@@ -1,61 +1,115 @@
 "use client";
-import ImageTile from "./rotating_cards";
+
+import Image from "next/image";
 import { motion } from "framer-motion";
+import { GitHubIcon, LinkedInIcon, MailIcon } from "../icons";
+
+const fadeUp = {
+  initial: { opacity: 0, y: 8 },
+  animate: { opacity: 1, y: 0 },
+};
+
+const ease = [0.22, 1, 0.36, 1] as const;
 
 export default function HeroSection() {
-
-  const cards = [
-  {
-    image: "/images/IMG_20240120_120618.jpg",
-    caption: "Just me.",
-  },
-  {
-    image: "/images/IMG_20240724_123359.jpg",
-    caption: "Somewhere in Europe.",
-  },
-  {
-    image: "/images/IMG-20220731-WA0054.jpg",
-    caption: "Being myself.",
-  },
-  {
-    image: "/images/IMG-20240624-WA0034.jpg",
-    caption: "Tech gets me going.",
-  },
-  {
-    image: "/images/RJ_03081-opq3558734422.jpg",
-    caption: "At Tech4Good conference.",
-  },
-];
-
   return (
-    <section className="h-screen flex items-center justify-center bg-white px-4 relative">
-      <div className="max-w-6xl w-full flex flex-col md:grid md:grid-cols-2 gap-6 md:gap-8 items-center justify-center h-full">
-        {/* Image/Card - Top on mobile, Left on desktop */}
-        <div className="flex justify-center items-center order-1 md:order-1">
-          <div className="scale-75 md:scale-100">
-            <ImageTile cards={cards} />
-          </div>
-        </div>
+    <section
+      id="top"
+      className="relative flex min-h-[calc(100vh-3.5rem)] items-center"
+    >
+      <div className="mx-auto w-full max-w-4xl px-6 md:px-8 py-24 md:py-28">
+        <motion.div
+          {...fadeUp}
+          transition={{ duration: 0.6, ease }}
+          className="mb-8"
+        >
+          <Image
+            src="/aryan.jpg"
+            alt="Aryan Sharma"
+            width={96}
+            height={96}
+            priority
+            className="h-20 w-20 rounded-full object-cover md:h-24 md:w-24"
+          />
+        </motion.div>
 
-        {/* Text - Bottom on mobile, Right on desktop */}
-        <div className="flex items-center justify-center order-2 md:order-2">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: "easeInOut" }}
-            className="text-center md:text-left max-w-xl md:max-w-3xl"
+        <motion.p
+          {...fadeUp}
+          transition={{ duration: 0.5, ease, delay: 0.05 }}
+          className="mb-6 text-xs uppercase tracking-[0.22em] text-muted"
+        >
+          Aryan Sharma &middot; Builder
+        </motion.p>
+
+        <motion.p
+          {...fadeUp}
+          transition={{ duration: 0.6, ease, delay: 0.12 }}
+          className="max-w-3xl text-3xl font-medium leading-[1.1] tracking-tight text-foreground md:text-5xl lg:text-6xl"
+        >
+          <span className="font-serif italic">Building</span> at LangWatch.{" "}
+          <span className="font-serif italic">Incoming</span> at Booking.com.
+          <br className="hidden md:block" />
+          <span className="text-muted"> Previously orq.ai and VU Amsterdam.</span>
+        </motion.p>
+
+        <motion.div
+          {...fadeUp}
+          transition={{ duration: 0.6, ease, delay: 0.22 }}
+          className="mt-10"
+        >
+          <a
+            href="https://calendly.com/aryansharma2k2/aryan-x-15-mins"
+            target="_blank"
+            rel="noreferrer"
+            className="group inline-flex items-center gap-2 rounded-full bg-foreground px-5 py-2.5 text-sm font-medium text-background transition-colors hover:bg-[--color-muted]"
           >
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-gray-900 mb-2">
-              Hey, I'm Aryan.
-            </h1>
-            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold leading-tight text-gray-800 mb-3">
-              <i>Builder. Founder-ish.</i>
-            </h2>
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 leading-relaxed">
-              I don't just write code. I ship things people use.
-            </p>
-          </motion.div>
-        </div>
+            Book a 15-min call
+            <span
+              aria-hidden
+              className="inline-block transition-transform duration-200 group-hover:translate-x-0.5"
+            >
+              →
+            </span>
+          </a>
+        </motion.div>
+
+        <motion.ul
+          {...fadeUp}
+          transition={{ duration: 0.6, ease, delay: 0.3 }}
+          className="mt-8 flex items-center gap-5 text-muted"
+        >
+          <li>
+            <a
+              href="mailto:aryansharma2k2@gmail.com"
+              aria-label="Email"
+              className="inline-flex hover:text-foreground transition-colors"
+            >
+              <MailIcon />
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://github.com/aryansharma28"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="GitHub"
+              className="inline-flex hover:text-foreground transition-colors"
+            >
+              <GitHubIcon />
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.linkedin.com/in/aryansharma12282002/"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="LinkedIn"
+              className="inline-flex hover:text-foreground transition-colors"
+            >
+              <LinkedInIcon />
+            </a>
+          </li>
+        </motion.ul>
       </div>
     </section>
   );
