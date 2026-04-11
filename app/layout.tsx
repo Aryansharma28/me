@@ -1,6 +1,6 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Instrument_Serif, Syne } from "next/font/google";
+import { Geist, Geist_Mono, Instrument_Serif, DM_Serif_Display } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 
 const geist = Geist({
@@ -23,10 +23,11 @@ const instrumentSerif = Instrument_Serif({
   display: "swap",
 });
 
-const syne = Syne({
+const dmSerifDisplay = DM_Serif_Display({
   subsets: ["latin"],
-  weight: ["500", "600", "700"],
-  variable: "--font-syne",
+  weight: "400",
+  style: ["normal", "italic"],
+  variable: "--font-dm-serif-display",
   display: "swap",
 });
 
@@ -61,7 +62,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geist.variable} ${geistMono.variable} ${instrumentSerif.variable} ${syne.variable}`}
+      className={`${geist.variable} ${geistMono.variable} ${instrumentSerif.variable} ${dmSerifDisplay.variable}`}
     >
       <body className="bg-background text-foreground antialiased">
         {children}
