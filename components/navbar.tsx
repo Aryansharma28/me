@@ -1,6 +1,8 @@
+import ThemeToggle from "./theme-toggle";
+
 export default function Navbar() {
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-[--color-subtle] bg-white/70 backdrop-blur-md">
+    <header className="sticky top-0 z-50 w-full border-b border-[--color-subtle] bg-background/70 backdrop-blur-md">
       <nav className="grid h-14 w-full grid-cols-3 items-center px-6 md:px-8">
         <div aria-hidden />
 
@@ -31,7 +33,8 @@ export default function Navbar() {
           </li>
         </ul>
 
-        <div className="flex justify-end">
+        <div className="flex items-center justify-end gap-2">
+          <ThemeToggle />
           <a
             href="https://cal.com/aryan-sharma-mwdtuc/20-mins"
             target="_blank"

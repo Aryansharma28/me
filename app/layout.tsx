@@ -54,6 +54,15 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 };
 
+const themeInitScript = `(() => {
+  try {
+    const stored = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const theme = stored === 'light' || stored === 'dark' ? stored : (prefersDark ? 'dark' : 'light');
+    if (theme === 'dark') document.documentElement.classList.add('dark');
+  } catch (_) {}
+})();`;
+
 export default function RootLayout({
   children,
 }: {
@@ -62,8 +71,14 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={`${geist.variable} ${geistMono.variable} ${instrumentSerif.variable} ${dmSerifDisplay.variable}`}
     >
+      <head>
+        <script
+          dangerouslySetInnerHTML={{ __html: themeInitScript }}
+        />
+      </head>
       <body className="bg-background text-foreground antialiased">
         {children}
         <Analytics />
